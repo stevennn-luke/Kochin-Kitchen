@@ -1,0 +1,290 @@
+/* Header */
+.whatson-header {
+    background: #000;
+    border-bottom: 1px solid rgba(238, 211, 131, 0.15);
+}
+
+.whatson-header__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 40px;
+}
+
+.whatson-header__left {
+    flex: 1;
+}
+
+.whatson-header__socials {
+    display: flex;
+    gap: 14px;
+}
+
+.whatson-header__socials a {
+    color: rgba(238, 211, 131, 0.6);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.whatson-header__socials a:hover {
+    color: #EED383;
+}
+
+.whatson-header__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.whatson-header__logo {
+    font-family: var(--font-mendl);
+    font-size: 32px;
+    font-weight: 100;
+    color: #EED383;
+    letter-spacing: 8px;
+}
+
+.whatson-header__right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.whatson-header__enquiry {
+    background: transparent;
+    border: 1px solid #EED383;
+    color: #EED383;
+    font-family: var(--font-nav);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.whatson-header__enquiry:hover {
+    background: #EED383;
+    color: #000;
+}
+
+.whatson-header__book {
+    background: #EED383;
+    border: none;
+    color: #000;
+    font-family: var(--font-nav);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.whatson-header__book:hover {
+    background: var(--gold);
+}
+
+.whatson-header__nav {
+    border-top: 1px solid rgba(238, 211, 131, 0.1);
+    padding: 0 40px;
+}
+
+.whatson-header__links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatson-header__links li {
+    color: rgba(238, 211, 131, 0.7);
+    font-family: var(--font-nav);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+.whatson-header__links li:hover {
+    color: #EED383;
+}
+
+.whatson-header__links--active {
+    color: #EED383 !important;
+    border-bottom: 1px solid #EED383;
+}
+
+/* Page content */
+.whatsonpage {
+    background: #fff;
+    padding: 80px 80px 60px;
+}
+
+.whatsonpage--upcoming {
+    background: #000;
+    padding: 80px;
+}
+
+.whatsonpage__heading {
+    font-family: var(--font-mendl);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+}
+
+.whatsonpage--upcoming .whatsonpage__heading {
+    color: #EED383;
+}
+
+.whatsonpage__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.whatsonpage__track::-webkit-scrollbar {
+    display: none;
+}
+
+.whatsonpage__card {
+    flex: 0 0 380px;
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+
+.whatsonpage__card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.whatsonpage__card-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(238, 211, 131, 0.3);
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-family: var(--font-standard);
+}
+
+.whatsonpage__card-banner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.whatsonpage__card-title {
+    font-family: var(--font-mendl);
+    font-size: 24px;
+    font-weight: 100;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.whatsonpage__card-sub {
+    font-family: var(--font-standard);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.whatsonpage__card-label {
+    font-family: var(--font-standard);
+    font-size: 13px;
+    color: #3a3a3a;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.whatsonpage__progress-track {
+    margin-top: 28px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.whatsonpage__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #1a1a1a;
+    border-radius: 2px;
+    transition: width 0.1s ease;
+}
+
+/* Upcoming event row */
+.whatsonpage__event-row {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.whatsonpage__event-img {
+    flex: 0 0 380px;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+.whatsonpage__event-content {
+    flex: 1;
+}
+
+.whatsonpage__event-title {
+    font-family: var(--font-mendl);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 100;
+    color: #EED383;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.whatsonpage__event-date {
+    font-family: var(--font-standard);
+    font-size: 16px;
+    color: rgba(238, 211, 131, 0.7);
+    margin-bottom: 20px;
+}
+
+.whatsonpage__event-desc {
+    font-family: var(--font-standard);
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(238, 211, 131, 0.7);
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.whatsonpage__event-btn {
+    background: #EED383;
+    border: none;
+    padding: 12px 32px;
+    font-family: var(--font-nav);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.whatsonpage__event-btn:hover {
+    background: var(--gold);
+}

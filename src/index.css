@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'TransatLight';
+  src: url('./assets/fonts/TransatLight.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TransatStandard';
+  src: url('./fonts/transat-standard.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MendlSansDawnThin';
+  src: url('./fonts/MendlSansDawnThin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --black: #000000;
+  --off-white: #F5F0E8;
+  --dark-bg: #111111;
+  --font-nav: 'TransatStandard', sans-serif;
+  --font-standard: 'TransatStandard', sans-serif;
+  --font-mendl: 'MendlSansDawnThin', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: var(--font-standard);
+  overflow-x: hidden;
+}

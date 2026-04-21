@@ -1,0 +1,82 @@
+.hours {
+    background: #000;
+    padding: 80px 80px;
+    border-top: 1px solid rgba(238, 211, 131, 0.1);
+}
+
+.hours__inner {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hours__left {
+    flex: 1;
+}
+
+.hours__heading {
+    font-family: var(--font-mendl);
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 100;
+    line-height: 1.2;
+    color: #EED383;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hours__right {
+    flex: 1.5;
+    border-left: 1px solid rgba(238, 211, 131, 0.2);
+    padding-left: 60px;
+}
+
+.hours__col-title {
+    font-family: var(--font-standard);
+    font-size: 15px;
+    font-weight: 600;
+    color: #EED383;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.hours__col-title--brunch {
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.hours__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(238, 211, 131, 0.15);
+}
+
+.hours__row--last {
+    border-bottom: none;
+}
+
+.hours__days {
+    font-family: var(--font-standard);
+    font-size: 18px;
+    font-weight: 300;
+    color: #EED383;
+    opacity: 0.85;
+}
+
+.hours__times {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.hours__times span {
+    font-family: var(--font-standard);
+    font-size: 18px;
+    font-weight: 300;
+    color: #EED383;
+    opacity: 0.85;
+}
