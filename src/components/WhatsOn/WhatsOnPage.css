@@ -101,29 +101,43 @@
 }
 
 .whatson-header__links li {
-    color: rgba(238, 211, 131, 0.7);
+    color: #EED383;
     font-family: var(--font-nav);
     font-size: 13px;
     letter-spacing: 1.5px;
     cursor: pointer;
     position: relative;
     padding: 4px 0;
-    transition: color 0.2s;
 }
 
-.whatson-header__links li:hover {
-    color: #EED383;
+.whatson-header__links li::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: #EED383;
+    transition: width 0.3s ease;
+}
+
+.whatson-header__links li:hover::after {
+    width: 100%;
 }
 
 .whatson-header__links--active {
     color: #EED383 !important;
-    border-bottom: 1px solid #EED383;
+}
+
+.whatson-header__links--active::after {
+    width: 100% !important;
 }
 
 /* Page content */
 .whatsonpage {
     background: #fff;
-    padding: 80px 80px 60px;
+    padding: 100px 80px 60px;
+    /* matches Contact/Reservation top spacing — 296px total minus the 124px header = 172px handled by padding here */
 }
 
 .whatsonpage--upcoming {
@@ -133,7 +147,7 @@
 
 .whatsonpage__heading {
     font-family: var(--font-mendl);
-    font-size: clamp(24px, 3vw, 40px);
+    font-size: clamp(28px, 4vw, 52px);
     font-weight: 100;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -287,4 +301,17 @@
 
 .whatsonpage__event-btn:hover {
     background: var(--gold);
+}
+@media (max-width: 768px) {
+    .whatsonpage__event-row {
+        flex-direction: column;
+        gap: 32px;
+        align-items: flex-start;
+    }
+    .whatsonpage__event-img {
+        flex: auto;
+        width: 100%;
+    }
+    .whatsonpage { padding: 80px 24px 60px; }
+    .whatsonpage--upcoming { padding: 60px 24px; }
 }

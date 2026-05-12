@@ -45,9 +45,9 @@
 
 .hero__title {
   font-family: var(--font-mendl);
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 100;
-  color: #EED383;
+  color: var(--silver, #C8C8C8);
   letter-spacing: 8px;
 }
 

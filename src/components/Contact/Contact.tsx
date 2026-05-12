@@ -1,16 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Contact.css';
 
-const MAP_STYLE = [{ "elementType": "geometry", "stylers": [{ "color": "#1d2c4d" }] }, { "elementType": "labels.text.fill", "stylers": [{ "color": "#8ec3b9" }] }, { "elementType": "labels.text.stroke", "stylers": [{ "color": "#1a3646" }] }, { "featureType": "administrative.country", "elementType": "geometry.stroke", "stylers": [{ "color": "#4b6878" }] }, { "featureType": "landscape.natural", "elementType": "geometry", "stylers": [{ "color": "#023e58" }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#283d6a" }] }, { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [{ "color": "#023e58" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#304a7d" }] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#98a5be" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#2c6675" }] }, { "featureType": "transit.line", "elementType": "geometry.fill", "stylers": [{ "color": "#283d6a" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#0e1626" }] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#4e6d70" }] }];
-
-declare global {
-    interface Window { google: any; initMap: () => void; }
-}
-
 const Contact = () => {
     const { language } = useLanguage();
-    const mapRef = useRef<HTMLDivElement>(null);
     const [formData, setFormData] = useState({
         firstName: '', lastName: '', email: '', mobile: '', message: '',
     });
@@ -20,8 +13,8 @@ const Contact = () => {
             heading: 'Get In Touch',
             contactDetails: 'Contact details',
             address: ['2 Av. du Pont', 'Gatineau, QC J8V 1A2', 'Canada'],
-            email: 'info@kochinkitchen.ca',
-            phone: '613-562-4461',
+            email: 'Lacuisinedekochin@gmail.com',
+            phone: '819-243-2111',
             hours: 'Restaurant Hours',
             days: 'Tuesday – Sunday',
             slot1: '12:00 pm – 3:30 pm',
@@ -40,8 +33,8 @@ const Contact = () => {
             heading: 'Nous Contacter',
             contactDetails: 'Coordonnées',
             address: ['2 Av. du Pont', 'Gatineau, QC J8V 1A2', 'Canada'],
-            email: 'info@kochinkitchen.ca',
-            phone: '613-562-4461',
+            email: 'Lacuisinedekochin@gmail.com',
+            phone: '819-243-2111',
             hours: 'Horaires du Restaurant',
             days: 'Mardi – Dimanche',
             slot1: '12h00 – 15h30',
@@ -60,36 +53,14 @@ const Contact = () => {
 
     const t = labels[language];
 
-    useEffect(() => {
-        const initMap = () => {
-            if (!mapRef.current || !window.google) return;
-            const location = { lat: 45.4795, lng: -75.7278 };
-            const map = new window.google.maps.Map(mapRef.current, {
-                zoom: 15,
-                center: location,
-                styles: MAP_STYLE,
-                disableDefaultUI: true,
-                zoomControl: true,
-            });
-            new window.google.maps.Marker({ position: location, map });
-        };
-
-        if (window.google) {
-            initMap();
-        } else {
-            window.initMap = initMap;
-            const existing = document.getElementById('gmap-script');
-            if (!existing) {
-                const script = document.createElement('script');
-                script.id = 'gmap-script';
-                // Replace YOUR_API_KEY with your actual Google Maps API key
-                script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
-                script.async = true;
-                script.defer = true;
-                document.head.appendChild(script);
-            }
-        }
-    }, []);
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const subject = encodeURIComponent('Contact Form — Kochin Kitchen');
+        const body = encodeURIComponent(
+            `First Name: ${formData.firstName}\nLast Name: ${formData.lastName}\nEmail: ${formData.email}\nMobile: ${formData.mobile}\n\nMessage:\n${formData.message}`
+        );
+        window.location.href = `mailto:Lacuisinedekochin@gmail.com?subject=${subject}&body=${body}`;
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -97,9 +68,8 @@ const Contact = () => {
 
     return (
         <section className="contact" id="contact">
-
             {/* GET IN TOUCH */}
-            <div className="contact__inner">
+            <form className="contact__inner" onSubmit={handleSubmit}>
                 <div className="contact__left">
                     <h2 className="contact__heading">{t.heading}</h2>
 
@@ -146,15 +116,23 @@ const Contact = () => {
                         <label className="contact__label">{t.message}</label>
                         <textarea className="contact__input contact__textarea" name="message" value={formData.message} onChange={handleChange} />
                     </div>
-                    <button className="contact__btn">{t.send}</button>
+                    <button type="submit" className="contact__btn">{t.send}</button>
                 </div>
-            </div>
+            </form>
 
             {/* GETTING HERE */}
             <div className="contact__map-section">
                 <h2 className="contact__map-heading">{t.getting}</h2>
                 <p className="contact__map-text">{t.gettingText}</p>
-                <div className="contact__map-wrap" ref={mapRef} />
+                <div className="contact__map-wrap">
+                    <iframe
+                        title="Kochin Kitchen location"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-75.7276%2C45.4217%2C-75.7076%2C45.4317&layer=mapnik&marker=45.4267%2C-75.7176"
+                        style={{ width: '100%', height: '100%', border: 0 }}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </div>
             </div>
 
         </section>

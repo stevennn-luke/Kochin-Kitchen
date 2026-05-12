@@ -1,6 +1,7 @@
 import { useLanguage } from '../../contexts/LanguageContext';
 import { en } from '../../translations/en';
 import { fr } from '../../translations/fr';
+import { useNavigate } from 'react-router-dom';
 import './About.css';
 
 const IconCalendar = () => (
@@ -32,6 +33,13 @@ const quickLinkKeys = ['book', 'flavours', 'gather'] as const;
 const About = () => {
     const { language } = useLanguage();
     const t = language === 'en' ? en : fr;
+    const navigate = useNavigate();
+
+    const handleQuickLink = (key: typeof quickLinkKeys[number]) => {
+        if (key === 'book') navigate('/reservation');
+        else if (key === 'flavours') navigate('/menu');
+        else if (key === 'gather') navigate('/events');
+    };
 
     return (
         <section className="about">
@@ -52,7 +60,7 @@ const About = () => {
                     <p className="about__links-heading">{t.quickLinks.heading}</p>
                     <ul className="about__links">
                         {quickLinkKeys.map((key, i) => (
-                            <li key={key}>
+                            <li key={key} onClick={() => handleQuickLink(key)} style={{ cursor: 'pointer' }}>
                                 <span className="about__icon">{icons[i]}</span>
                                 {t.quickLinks[key]}
                             </li>

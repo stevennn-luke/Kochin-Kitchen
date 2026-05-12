@@ -11,8 +11,12 @@ import Hours from './components/Hours/Hours';
 import FoodGallery from './components/FoodGallery/FoodGallery';
 import Delivery from './components/Delivery/Delivery';
 import Contact from './components/Contact/Contact';
+import Reservation from './components/Reservation/Reservation';
+import Events from './components/Events/Events';
 import Footer from './components/Footer/Footer';
 import WhatsOnPage from './components/WhatsOn/WhatsOnPage';
+import Menu from './components/Menu/Menu';
+import LegalPage from './components/Legal/LegalPage';
 import './App.css';
 
 const HomePage = () => (
@@ -38,6 +42,20 @@ const ContactPage = () => (
   </div>
 );
 
+const ReservationPage = () => (
+  <div>
+    <Reservation />
+    <Footer />
+  </div>
+);
+
+const EventsPage = () => (
+  <div>
+    <Events />
+    <Footer />
+  </div>
+);
+
 const App = () => {
   return (
     <div>
@@ -46,6 +64,12 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/whatson" element={<WhatsOnPage />} />
+        <Route path="/reservation" element={<ReservationPage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/privacy" element={<LegalPage type="privacy" />} />
+        <Route path="/terms" element={<LegalPage type="terms" />} />
+        <Route path="/responsible-service" element={<LegalPage type="service" />} />
       </Routes>
     </div>
   );

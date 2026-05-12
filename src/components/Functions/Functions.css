@@ -77,3 +77,34 @@
     font-size: 13px;
     letter-spacing: 2px;
 }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .functions {
+        padding: 60px 24px;
+    }
+
+    .functions__inner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .functions__left {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .functions__img-frame {
+        max-width: 100%;
+        aspect-ratio: 3/4;
+        border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+    }
+
+    .functions__right {
+        width: 100%;
+    }
+
+    .functions__body {
+        font-size: 16px;
+    }
+}

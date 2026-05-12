@@ -1,0 +1,198 @@
+.reservation {
+    background: #fff;
+    padding: 296px 80px 0;
+}
+
+.reservation__inner {
+    display: flex;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+/* ── LEFT ─────────────────────────────────────────── */
+.reservation__left {
+    flex: 0 0 300px;
+}
+
+.reservation__heading {
+    font-family: var(--font-mendl);
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 48px;
+}
+
+.reservation__details-block {
+    margin-bottom: 36px;
+}
+
+.reservation__sub {
+    font-family: var(--font-standard);
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.reservation__detail-text {
+    font-family: var(--font-standard);
+    font-size: 18px;
+    font-weight: 300;
+    color: #3a3a3a;
+    line-height: 1.9;
+}
+
+.reservation__detail-link {
+    color: #3a3a3a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.reservation__detail-link:hover {
+    color: #1a1a1a;
+}
+
+/* ── RIGHT ─────────────────────────────────────────── */
+.reservation__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Party size block */
+.reservation__party-block {}
+
+.reservation__party-label {
+    font-family: var(--font-standard);
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.reservation__party-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.reservation__party-btn {
+    width: 42px;
+    height: 42px;
+    background: #F5F0E8;
+    border: 1px solid transparent;
+    font-family: var(--font-standard);
+    font-size: 14px;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, color 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation__party-btn:hover {
+    background: #EED383;
+}
+
+.reservation__party-btn--active {
+    background: #EED383;
+    border-color: #c5a83e;
+    font-weight: 600;
+}
+
+/* Form */
+.reservation__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reservation__fields-row {
+    display: flex;
+    gap: 20px;
+}
+
+.reservation__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.reservation__label {
+    font-family: var(--font-standard);
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.reservation__input {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    outline: none;
+    padding: 10px 10px;
+    font-family: var(--font-standard);
+    font-size: 12px;
+    color: #1a1a1a;
+    width: 100%;
+    border-radius: 0;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.reservation__input:focus {
+    border-color: #1a1a1a;
+}
+
+.reservation__textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.reservation__btn {
+    background: #EED383;
+    border: none;
+    padding: 16px 40px;
+    font-family: var(--font-standard);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+.reservation__btn:hover {
+    background: var(--gold);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+    .reservation {
+        padding: 140px 24px 0;
+    }
+
+    .reservation__inner {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .reservation__left {
+        flex: none;
+    }
+
+    .reservation__fields-row {
+        flex-direction: column;
+    }
+}

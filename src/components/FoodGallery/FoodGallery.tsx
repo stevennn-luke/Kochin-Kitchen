@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import './FoodGallery.css';
 
 const foodImages = [
@@ -10,7 +9,6 @@ const foodImages = [
 ];
 
 const FoodGallery = () => {
-  const { language } = useLanguage();
   const trackRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 

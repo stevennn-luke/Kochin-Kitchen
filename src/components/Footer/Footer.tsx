@@ -8,14 +8,14 @@ const Footer = () => {
 
     const enContent = {
         tagline: 'Authentic Kerala cuisine in the heart of the community.',
-        email: 'info@kochinkitchen.ca',
-        phone: '613-562-4461',
+        email: 'Lacuisinedekochin@gmail.com',
+        phone: '819-243-2111',
         explore: 'Explore',
         exploreItems: ['Eat & Drink', 'Events & Catering', 'Reservations', 'Contact'],
         visit: 'Visit',
         hours: 'Hours',
         hoursItems: ['Tue - Sun', '12:00 pm - 3:30 pm', '5:00 pm - 9:00 pm', 'Monday: Closed'],
-        copy: '2026 KOCHIN KITCHEN. ALL RIGHTS RESERVED.',
+        copy: 'KOCHIN KITCHEN 2026',
         privacy: 'Privacy Policy',
         terms: 'Terms and Conditions',
         service: 'Responsible Service',
@@ -23,14 +23,14 @@ const Footer = () => {
 
     const frContent = {
         tagline: 'Cuisine authentique du Kerala au coeur de la communaute.',
-        email: 'info@kochinkitchen.ca',
-        phone: '613-562-4461',
+        email: 'Lacuisinedekochin@gmail.com',
+        phone: '819-243-2111',
         explore: 'Explorer',
         exploreItems: ['Manger et Boire', 'Evenements et Traiteur', 'Reservations', 'Nous joindre'],
         visit: 'Nous Trouver',
         hours: 'Horaires',
         hoursItems: ['Mar - Dim', '12h00 - 15h30', '17h00 - 21h00', 'Lundi : Ferme'],
-        copy: '2026 KOCHIN KITCHEN. TOUS DROITS RESERVES.',
+        copy: 'KOCHIN KITCHEN 2026',
         privacy: 'Politique de confidentialite',
         terms: 'Conditions generales',
         service: 'Service responsable',
@@ -76,13 +76,25 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="footer__col">
-                    <h4 className="footer__col-heading">{t.explore}</h4>
-                    <ul className="footer__col-list">
-                        {t.exploreItems.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
+                {/* Explore + Hours grouped side by side */}
+                <div className="footer__col-group">
+                    <div className="footer__col">
+                        <h4 className="footer__col-heading">{t.explore}</h4>
+                        <ul className="footer__col-list">
+                            {t.exploreItems.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="footer__col-divider" />
+                    <div className="footer__col">
+                        <h4 className="footer__col-heading">{t.hours}</h4>
+                        <ul className="footer__col-list">
+                            {t.hoursItems.map((item, i) => (
+                                <li key={i} style={{ cursor: 'default' }}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="footer__col">
@@ -99,24 +111,15 @@ const Footer = () => {
                     </a>
                 </div>
 
-                <div className="footer__col">
-                    <h4 className="footer__col-heading">{t.hours}</h4>
-                    <ul className="footer__col-list">
-                        {t.hoursItems.map((item, i) => (
-                            <li key={i} style={{ cursor: 'default' }}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-
             </div>
 
             <div className="footer__legal">
                 <div className="footer__legal-links">
-                    <a href="#">{t.privacy}</a>
+                    <a onClick={() => navigate('/privacy')} style={{cursor:'pointer'}}>{t.privacy}</a>
                     <span className="footer__legal-sep">|</span>
-                    <a href="#">{t.terms}</a>
+                    <a onClick={() => navigate('/terms')} style={{cursor:'pointer'}}>{t.terms}</a>
                     <span className="footer__legal-sep">|</span>
-                    <a href="#">{t.service}</a>
+                    <a onClick={() => navigate('/responsible-service')} style={{cursor:'pointer'}}>{t.service}</a>
                 </div>
             </div>
 

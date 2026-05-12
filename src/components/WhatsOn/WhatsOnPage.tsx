@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer.tsx';
 import './WhatsOnPage.css';
 
@@ -16,7 +15,6 @@ const upcomingCards = [
 
 const WhatsOnPage = () => {
     const { language } = useLanguage();
-    const navigate = useNavigate();
     const trackRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLDivElement>(null);
 
@@ -35,50 +33,6 @@ const WhatsOnPage = () => {
 
     return (
         <>
-            {/* Page header — same style as contact */}
-            <header className="whatson-header">
-                <div className="whatson-header__top">
-                    <div className="whatson-header__left">
-                        <div className="whatson-header__socials">
-                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" />
-                                    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
-                                </svg>
-                            </a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                                </svg>
-                            </a>
-                            <a href="https://x.com/kochinkitchen?lang=en" target="_blank" rel="noreferrer">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.594l4.254 5.623L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="whatson-header__center" onClick={() => navigate('/')}>
-                        <span className="whatson-header__logo">KOCHIN KITCHEN</span>
-                    </div>
-                    <div className="whatson-header__right">
-                        <button className="whatson-header__enquiry" onClick={() => navigate('/contact')}>{t.enquiry}</button>
-                        <button className="whatson-header__book" onClick={() => navigate('/contact')}>
-                            {language === 'en' ? 'Book a table' : 'Réserver'}
-                        </button>
-                    </div>
-                </div>
-                <div className="whatson-header__nav">
-                    <ul className="whatson-header__links">
-                        <li onClick={() => navigate('/')}>{language === 'en' ? 'Eat & Drink' : 'Manger & Boire'}</li>
-                        <li className="whatson-header__links--active">{language === 'en' ? 'What\'s On' : 'À l\'Affiche'}</li>
-                        <li onClick={() => navigate('/contact')}>{language === 'en' ? 'Events & Catering' : 'Événements'}</li>
-                        <li onClick={() => navigate('/contact')}>{language === 'en' ? 'Reservations' : 'Réservations'}</li>
-                        <li onClick={() => navigate('/contact')}>{language === 'en' ? 'Contact' : 'Contact'}</li>
-                    </ul>
-                </div>
-            </header>
-
             {/* Weekly Specials */}
             <section className="whatsonpage">
                 <h2 className="whatsonpage__heading">{t.weekly}</h2>

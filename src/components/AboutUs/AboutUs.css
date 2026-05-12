@@ -1,7 +1,7 @@
 .aboutus {
     background: #000;
     padding: 100px 80px;
-    border-top: 1px solid rgba(238, 211, 131, 0.1);
+    border-top: 1px solid rgba(200, 200, 200, 0.08);
 }
 
 .aboutus__inner {
@@ -25,7 +25,7 @@
     font-family: var(--font-standard);
     font-size: 18px;
     font-weight: 300;
-    color: #EED383;
+    color: var(--silver);
     opacity: 0.85;
     line-height: 1.9;
     margin-bottom: 20px;
@@ -33,8 +33,8 @@
 
 .aboutus__btn {
     background: transparent;
-    border: 1px solid #EED383;
-    color: #EED383;
+    border: 1px solid var(--silver);
+    color: var(--silver);
     font-family: var(--font-nav);
     font-size: 13px;
     letter-spacing: 2px;
@@ -46,14 +46,14 @@
 }
 
 .aboutus__btn:hover {
-    background: #EED383;
+    background: var(--silver);
     color: #000;
 }
 
-/* Vertical divider */
+/* Vertical divider — desktop only */
 .aboutus__divider {
     width: 1px;
-    background: rgba(238, 211, 131, 0.25);
+    background: rgba(200, 200, 200, 0.18);
     align-self: stretch;
     min-height: 160px;
     flex-shrink: 0;
@@ -69,10 +69,10 @@
 
 .aboutus__heading {
     font-family: var(--font-mendl);
-    font-size: clamp(40px, 5vw, 56px);
+    font-size: clamp(28px, 4vw, 52px);
     font-weight: 100;
     line-height: 1.05;
-    color: #EED383;
+    color: var(--silver);
     text-transform: uppercase;
     letter-spacing: 4px;
     display: flex;
@@ -81,4 +81,45 @@
 
 .aboutus__heading span {
     display: block;
+}
+
+/* Divider below heading */
+.aboutus__heading-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(200, 200, 200, 0.5);
+    margin-top: 16px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .aboutus {
+        padding: 60px 24px;
+    }
+
+    .aboutus__inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 32px;
+    }
+
+    .aboutus__left {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    /* No divider on mobile */
+    .aboutus__divider {
+        display: none;
+    }
+
+    .aboutus__right {
+        padding-left: 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .aboutus__p {
+        font-size: 16px;
+    }
 }

@@ -1,7 +1,7 @@
 .contact {
     background: #fff;
-    /* Extra space for the taller contact header (top bar ~80px + nav ~44px) */
-    padding: 196px 80px 0;
+    /* Extra space for the taller contact header (top bar ~80px + nav ~44px) + 100px breathing room */
+    padding: 296px 80px 0;
 }
 
 .contact__inner {
@@ -18,7 +18,7 @@
 
 .contact__heading {
     font-family: var(--font-mendl);
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(28px, 4vw, 52px);
     font-weight: 100;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -72,31 +72,33 @@
 
 .contact__label {
     font-family: var(--font-standard);
-    font-size: 18px;
-    font-weight: 400;
-    color: #1a1a1a;
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .contact__input {
-    background: #F5F0E8;
-    border: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.18);
     outline: none;
-    padding: 16px 14px;
+    padding: 10px 10px;
     font-family: var(--font-standard);
-    font-size: 18px;
+    font-size: 12px;
     color: #1a1a1a;
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
     transition: border-color 0.2s;
+    box-sizing: border-box;
 }
 
 .contact__input:focus {
-    border-bottom: 1px solid #1a1a1a;
+    border-color: #1a1a1a;
 }
 
 .contact__textarea {
-    min-height: 120px;
+    min-height: 80px;
     resize: vertical;
 }
 

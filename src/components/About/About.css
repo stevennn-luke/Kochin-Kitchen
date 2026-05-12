@@ -17,7 +17,7 @@
 
 .about__heading {
     font-family: var(--font-mendl);
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(28px, 4vw, 52px);
     font-weight: 100;
     line-height: 1.1;
     color: #1a1a1a;
@@ -105,4 +105,31 @@
     display: flex;
     align-items: center;
     transition: color 0.2s;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 24px 60px;
+    }
+
+    .about__inner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about__left,
+    .about__right {
+        width: 100%;
+        flex: none;
+    }
+
+    .about__heading {
+        font-size: clamp(28px, 8vw, 44px);
+        margin-bottom: 20px;
+    }
+
+    .about__lead,
+    .about__body {
+        font-size: 16px;
+    }
 }
